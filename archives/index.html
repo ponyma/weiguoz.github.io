@@ -129,6 +129,146 @@
 </nav>
       
   
+    <article id="post-LeariningCPP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/04/LeariningCPP/" class="article-date">
+  	<time datetime="2014-11-04T06:54:06.000Z" itemprop="datePublished">Nov 4 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/04/LeariningCPP/">Learning cxx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight `c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div></pre></td></tr></table></figure>
+
+<h2 id="container">container</h2>
+<ul>
+<li><p><a href="http://www.cplusplus.com/reference/tuple/tuple/" target="_blank" rel="external"><code>tuple</code></a><br>A tuple is an object capable to hold a collection of elements. Each element can be of a different type.     </p>
+</li>
+<li><p><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream" target="_blank" rel="external"><code>stringstream</code></a><br>需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c_str()来用, 就是错误的. 如这个例子:<br><code>const char * stupid = ss.str().c_str(); // WRONG!</code>             </p>
+</li>
+<li><p><a href="http://www.boost.org/doc/libs/1_54_0/libs/multi_array/doc/index.html" target="_blank" rel="external"><code>boost::MultiArray</code></a></p>
+</li>
+</ul>
+<h2 id="method">method</h2>
+<ul>
+<li><p><a href="http://www.cplusplus.com/reference/algorithm/lower_bound/" target="_blank" rel="external"><code>lower_bound(first, last, val, operator&lt;)</code></a><br>Returns an <strong>iterator</strong> pointing to the <strong>first</strong> element in the range <em>[first,last)</em> which does not compare <strong>less</strong> than: &gt;= val. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/upper_bound/" target="_blank" rel="external"><code>upper_bound</code></a>         </p>
+</li>
+<li><p><a href="http://www.cplusplus.com/reference/iterator/prev/?kw=prev" target="_blank" rel="external"><code>prev(iterator, n=1)</code></a><br>Returns an <strong>iterator</strong> pointing to the element that it would be pointing to if advanced -n positions. See also:<br><a href="http://www.cplusplus.com/reference/iterator/next/" target="_blank" rel="external"><code>next</code></a> <a href="http://www.cplusplus.com/reference/iterator/advance/" target="_blank" rel="external"><code>advance</code></a> <a href="http://www.cplusplus.com/reference/iterator/distance/" target="_blank" rel="external"><code>distance</code></a>    </p>
+</li>
+<li><p><a href="http://en.cppreference.com/w/cpp/algorithm/max_element" target="_blank" rel="external"><code>max_element(first, last, operator&lt;)</code></a><br>Finds the greatest element in the range [first, last). See also:<br><a href="http://www.cplusplus.com/reference/algorithm/min_element/" target="_blank" rel="external"><code>min_element</code></a></p>
+</li>
+<li><p><a href="http://en.cppreference.com/w/cpp/algorithm/accumulate" target="_blank" rel="external"><code>accumulate(first, last, init, BinaryOperation/functor/lambda...)</code></a><br>Computes the sum of the given value init and the elements in the range [first, last). The first version uses operator+ to sum up the elements, the second version uses the given binary function op. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/transform/" target="_blank" rel="external"><code>transfrom(inFirst, inLast, outFirst, operator)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/for_each" target="_blank" rel="external"><code>for_each(first, last, UnaryFunction/lambda...)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/copy" target="_blank" rel="external"><code>copy</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/copy_backward" target="_blank" rel="external"><code>copy_backward</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/remove_copy" target="_blank" rel="external"><code>remove_copy</code></a> …<br><a href="http://en.cppreference.com/w/cpp/algorithm/fill" target="_blank" rel="external"><code>fill</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/fill_n" target="_blank" rel="external"><code>fill_n</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/generate" target="_blank" rel="external"><code>generate</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/replace" target="_blank" rel="external"><code>replace</code></a><br><a href="http://en.cppreference.com/w/cpp/string/byte/toupper" target="_blank" rel="external"><code>toupper</code></a></p>
+</li>
+<li><p><a href="http://en.cppreference.com/w/cpp/utility/functional/bind" target="_blank" rel="external"><code>bind(F&amp;&amp; f, Args&amp;&amp;... args)</code></a>, <a href="http://en.cppreference.com/w/cpp/utility/functional/placeholders" target="_blank" rel="external">placeholder: <code>_1, _2...</code></a><br>(函数偏特化) The function template bind generates a forwarding call wrapper for f. Calling this wrapper is equivalent to invoking f with some of its arguments bound to args. See also:<br><a href="http://www.cplusplus.com/reference/functional/bind1st/?kw=bind1st" target="_blank" rel="external"><code>bind1st</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/mem_fn" target="_blank" rel="external"><code>mem_fn</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/function" target="_blank" rel="external"><code>function</code></a> <a href="http://en.cppreference.com/w/cpp/language/decltype" target="_blank" rel="external"><code>decltype</code></a></p>
+</li>
+</ul>
+<h2 id="Concurrent:_A_lecture_posted_on_youtube_by_Qian_Bo"><a href="http://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M" target="_blank" rel="external">Concurrent: A lecture posted on youtube by Qian Bo</a></h2>
+<p><code>clang++ -DDBG -D_GLIBCXX_USE_NANOSLEEP -Wall -Wextra -Werror -Wshadow -std=c++11 -lpthread -g -o $TARGET $SRC</code>       </p>
+<h4 id="Thread">Thread</h4>
+<p><code>std::thread t1((Fctor()), std::move(s))</code>          </p>
+<ul>
+<li>参数总是以<strong>值传递</strong>的(即使以<code>&amp;</code>修饰), 若想传引用, 需<code>std::ref</code>或<code>std::move</code>. 类似禁止拷贝的还有<code>std::thread t2=std::move(t1)</code>  <code>mutex</code> <code>unique_lock</code> <code>promise</code> <code>future</code>, 注意<code>lock_guard</code>不能被<em>move</em>                       </li>
+<li>若是仿函数, 则需要额外加一层括号<strong>(</strong> Fctor() <strong>)</strong>                      </li>
+<li>相关操作: <code>t1.join()</code> <code>t1.detach()</code> <code>std::this_thread::get_id()</code>, using <code>std::thread::hardware_concurrent()</code> to avoid oversubscription.  </li>
+</ul>
+<h4 id="Avoiding_data_race">Avoiding data race</h4>
+<ul>
+<li>Synchronize data access: <code>std::mutex mu_;   std::lock_guard&lt;std::mutex&gt; guard(mu_);  // RAII</code>              </li>
+<li>Never leak a handle of data to outside;         </li>
+<li>Design interface appropriately.          </li>
+</ul>
+<h4 id="Avoiding_deadlock">Avoiding deadlock</h4>
+<ul>
+<li>Prefer locking single mutex, <strong>一个好的锁只锁定最小的临界区</strong>      </li>
+<li>Avoid locking a mutex and then calling a user provided function(because you will never know if the user function will lock another mutex);       </li>
+<li>Lock the mutex in same order;      </li>
+<li>Use <code>std::lock()</code> to lock more than one mutex :</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">std::lock(mu1, mu2);</div><div class="line">std::lock_guard&lt;mutex&gt; locker1(mu1, std::adopt_lock);</div><div class="line">std::lock_guard&lt;mutex&gt; locker2(mu2, std::adopt_lock);</div></pre></td></tr></table></figure>
+
+
+
+<h4 id="Unique_lock_and_lazy_initialization">Unique lock and lazy initialization</h4>
+<ul>
+<li><strong>unique lock</strong> std::mutex.lock()/std::mutex.unlock()是不被推荐的: 不但要写两次, 还有可能中途遇到<em>exception</em>而无法unlock); 除了上边说过的lock<em>guard的RAII技术, 还有通过`std::unique_lock<mutex> locker(mu</mutex></em>, std::defer_lock); ` 来频繁的lock/unlock(也可以不需要这俩), 这样就不用在减小临界区时不断的添加那一对对的<strong>{}</strong>.<br><em>注意：虽然扩展性更好, 但带来了稍多的开销, 故不能滥用</em>       </li>
+<li><strong>singleton/log::open(“file.log”)</strong> 会遇到只打开一次某资源的情形, 使用<em>double check</em>技术可能都不保险(cpu乱序执行). 这时候没有什么比使用<code>std::once_flag onc_</code>更让人开心: 可靠, 高效, 简单. <code>std::call_once(onc_, [&amp;](){ log_.open(&quot;file.log&quot;); });</code></li>
+</ul>
+<h4 id="Condition_variable">Condition variable</h4>
+<p>信号量是进程间通信机制, 而条件变量则是线程间通信机制. </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 生产者-消费者</span></div><div class="line">std::<span class="stl_container"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt;</span> q;</div><div class="line">std::mutex mu;</div><div class="line">std::condition_variable cond;</div><div class="line"></div><div class="line"><span class="keyword">void</span> producer () {</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> count=<span class="number">10</span>; count&gt;<span class="number">0</span>; --count) {</div><div class="line">        std::unique_lock&lt;mutex&gt; locker(mu);</div><div class="line">        q.push_front(count);</div><div class="line">        locker.unlock();</div><div class="line">        cond.notify_one(); <span class="comment">// or cond.notify_all()</span></div><div class="line">        std::this_thread::sleep_for(chrono::milliseconds(<span class="number">30</span>)); </div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> consumer() {</div><div class="line">    <span class="keyword">for</span> (; <span class="keyword">true</span>; ) {</div><div class="line">        std::unique_lock&lt;mutex&gt; locker(mu);</div><div class="line">        <span class="comment">// 考虑这里为何需要locker参数, 以及为何locker必须为unique_lock, 还有为何需要第二个参数(这里为lambda函数)</span></div><div class="line">        cond.wait(locker, [](){<span class="keyword">return</span> !q.empty(); });</div><div class="line"></div><div class="line">        <span class="keyword">int</span> data=q.back();</div><div class="line">        q.pop_back();</div><div class="line">        locker.unlock();</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; std::this_thread::get_id() &lt;&lt; <span class="string">" got a value: "</span> &lt;&lt; data &lt;&lt; endl;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><strong>注释中的理由</strong>: 考虑wait的内部实现, 其实它本身是sleep了, 然后通过notify来唤醒. 毫无意外的, 它必须一开始调用unlock()来避免额外地占用锁, 并且在唤醒后重新lock()来获取锁. 而这一步的过程可能出现<strong>suprious sleep</strong>, 在重新获得锁之后可能唤醒条件又不成立了: q非空, 所以需要第二个函数参数来再次确定.</p>
+<h4 id="Future,_Promise_and_async">Future, Promise and async</h4>
+<p>都是异步机制(基于线程)的通信工具          </p>
+<ul>
+<li><code>future</code>:子线程返回给主线程                    </li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> factorialR(<span class="keyword">int</span> N) { <span class="keyword">return</span> N&lt;=<span class="number">1</span> ? <span class="number">1</span> : N*factorialR(N-<span class="number">1</span>); }</div><div class="line"><span class="keyword">int</span> main() {</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu=std::async(std::launch::deferred<span class="comment">/*std::launch::async*/</span>, factorialR, <span class="number">4</span>);</div><div class="line">    <span class="keyword">int</span> x = fu.get(); <span class="comment">// call once only</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<ul>
+<li><code>promise</code>:主线程传递给子线程                                     </li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> ffactorial(std::future&lt;<span class="keyword">int</span>&gt; &f) {</div><div class="line">    <span class="keyword">int</span> N = f.get(); <span class="comment">// call once only</span></div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=N; ++i) ans *= i;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// can be copied!!!因此, 可用来对各子线程进行广播, 而f只能在一个线程上使用</span></div><div class="line"><span class="keyword">int</span> sfactorial(std::shared_future&lt;<span class="keyword">int</span>&gt; f) {</div><div class="line">    <span class="keyword">int</span> N = f.get(); <span class="comment">// get promise or exception: future_err::broken_promise</span></div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=N; ++i) ans *= i;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> testFuture() {</div><div class="line">    std::promise&lt;<span class="keyword">int</span>&gt; p; <span class="comment">// both promise & future only be moved but not copied/assigned...</span></div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; f = p.get_future();</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu = std::async(std::launch::deferred, ffactorial, std::ref(f));</div><div class="line">    std::this_thread::sleep_for(chrono::milliseconds(<span class="number">20</span>));<span class="comment">// so something else</span></div><div class="line">    p.set_value(<span class="number">4</span>);</div><div class="line">    <span class="keyword">int</span> x = fu.get(); <span class="comment">// gocha!</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child: "</span> &lt;&lt; x &lt;&lt; endl;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> testSharedFuture() {</div><div class="line">    std::promise&lt;<span class="keyword">int</span>&gt; p;</div><div class="line">    std::shared_future&lt;<span class="keyword">int</span>&gt; sf = p.get_future();</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu1 = std::async(std::launch::deferred, sfactorial, sf);</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu2 = std::async(std::launch::deferred, sfactorial, sf);</div><div class="line">    p.set_value(<span class="number">5</span>); <span class="comment">// make promise or p.set_exception(std::make_exception_ptr(std::runtime_error("human err")));</span></div><div class="line">    <span class="keyword">int</span> x1 = fu1.get();</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child1: "</span> &lt;&lt; x1 &lt;&lt; endl;</div><div class="line">    <span class="comment">// p.set_value(3); set againt is not allowed</span></div><div class="line">    <span class="keyword">int</span> x2 = fu2.get();</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child: "</span> &lt;&lt; x2 &lt;&lt; endl;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h4 id="packaged_task"><a href="http://en.cppreference.com/w/cpp/thread/packaged_task" target="_blank" rel="external">packaged_task</a></h4>
+<p>The class template std::packaged_task wraps any callable target (function, lambda expression, bind expression, or another function object) so that it can be invoked asynchronously. Its return value or exception thrown is stored in a shared state which can be accessed through std::future objects.<br>Just like std::function, std::packaged_task is a polymorphic, allocator-aware container: the stored callable target may be allocated on heap or with a provided allocator.<br>顾名思义, 可以用来是实现任务队列.       </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">std::<span class="stl_container"><span class="built_in">deque</span>&lt;<span class="built_in">std</span>::packaged_task&lt;<span class="keyword">int</span>()&gt;</span>&gt; task_q;</div><div class="line">std::mutex mu;</div><div class="line">std::condition_variable cond;</div><div class="line"></div><div class="line"><span class="keyword">void</span> thread_foo() {</div><div class="line">    std::packaged_task&lt;<span class="keyword">int</span>()&gt;tak;</div><div class="line">    {   std::lock_unique&lt;std::mutex&gt; locker(mu);</div><div class="line">        cond.wait(locker, [](){ <span class="keyword">return</span> !task_q.empty()});</div><div class="line">        tas = std::move(task_q.front());</div><div class="line">        task_q.pop_front();</div><div class="line">    }</div><div class="line">    tas();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main() {</div><div class="line">    std::thread t1(thread_foo);</div><div class="line">    std::packaged_task&lt;<span class="keyword">int</span>(<span class="comment">/*函数signature*/</span>)&gt; tas(bind(factorialR, <span class="number">6</span>)); <span class="comment">// 使用bind再适合不过了</span></div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu = tas.get_future();</div><div class="line">    {   std::lock_guard&lt;std::mutex&gt; locker(mu);</div><div class="line">        task_q.push_back(std::move(tas)); <span class="comment">// 考虑为何用 move</span></div><div class="line">    }</div><div class="line">    cond.notify_one();</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; fu.get();</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>3 ways to get a future:</p>
+<ul>
+<li>promise::get_future()</li>
+<li>packaged_task::get_future()</li>
+<li>async returns a future</li>
+</ul>
+<h4 id="summary_&amp;_DBG(gdb)">summary &amp; DBG(gdb)</h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> main() {</div><div class="line">    <span class="comment">/* thread */</span></div><div class="line">    std::thread t1(factorialR, <span class="number">6</span>);</div><div class="line">    std::this_thread::sleep_for(chrono::milliseconds(<span class="number">20</span>));<span class="comment">// so something else</span></div><div class="line">    chrono::steady_clock::time_point tp = chrono:steady_clock::now() + chrono::microseconds(<span class="number">4</span>);</div><div class="line">    std::this_thread::sleep_until(tp);</div><div class="line"></div><div class="line">    <span class="comment">/* Mutex */</span></div><div class="line">    std::mutex mu; <span class="comment">// mu.lock()/unlock() 不怎么用</span></div><div class="line">    std::lock_guard&lt;mutex&gt; locker(mu);</div><div class="line">    std::unique_lock&lt;mutex&gt; ulocker(mu); <span class="comment">// 可多次调用lock()/unlock()</span></div><div class="line">    ulocker.lock();</div><div class="line">    ulocker.try_lock();</div><div class="line">    ulocker.try_lock_for(chrono::nanoseconds(<span class="number">500</span>));</div><div class="line">    ulocker.try_lock_until(tp);</div><div class="line"></div><div class="line">    <span class="comment">/* Condition Variable */</span></div><div class="line">    std::condition_variable cond;</div><div class="line">    cond.wait(ulocker); </div><div class="line">    cond.wait_for(ulocker, chrono::microseconds(<span class="number">2</span>));</div><div class="line">    cond.wait_until(ulocker, tp);</div><div class="line"></div><div class="line">    <span class="comment">/* Future and Promise */</span></div><div class="line">    std::promise&lt;<span class="keyword">int</span>&gt; p;</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; f=p.get_future();</div><div class="line">    f.get(); <span class="comment">// 内部会调用 f.wait()</span></div><div class="line">    f.wait(); <span class="comment">// 类似也有 f.wait_for() f.wait_until();</span></div><div class="line"></div><div class="line">    <span class="comment">/* async() */</span></div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu = async(factorialR, <span class="number">6</span>);</div><div class="line"></div><div class="line">    <span class="comment">/* packaged_task  */</span></div><div class="line">    std::packaged_task&lt;<span class="keyword">int</span>(<span class="keyword">int</span>)&gt; t(factorialR);</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu2 = g.get_future();</div><div class="line">    t(<span class="number">6</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>DBG(gdb):</p>
+<ul>
+<li>directory</li>
+<li>info thread</li>
+<li>thread $ID$</li>
+<li>break $file.cpp:LINE$ thread all</li>
+<li>set scheduler-locking off|on|step</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/04/LeariningCPP/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-Welcome-to-my-life" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
