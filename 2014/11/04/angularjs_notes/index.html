@@ -6,17 +6,17 @@
   <title>AngularJS(ng) 的坑 | Wake up, write down</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="dirty checking
-ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误. 这个坑我踩了, 自己决定数据的采集时机, 页面上只做绑定.">
+ng会记录数据模型包含的数据项在任何特定时间点的值.当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AngularJS(ng) 的坑">
 <meta property="og:url" content="http://weiguozhu.com/2014/11/04/angularjs_notes/">
 <meta property="og:site_name" content="Wake up, write down">
 <meta property="og:description" content="dirty checking
-ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误. 这个坑我踩了, 自己决定数据的采集时机, 页面上只做绑定.">
+ng会记录数据模型包含的数据项在任何特定时间点的值.当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS(ng) 的坑">
 <meta name="twitter:description" content="dirty checking
-ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误. 这个坑我踩了, 自己决定数据的采集时机, 页面上只做绑定.">
+ng会记录数据模型包含的数据项在任何特定时间点的值.当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.">
 
   
     <link rel="alternative" href="/atom.xml" title="Wake up, write down" type="application/atom+xml">
@@ -134,7 +134,7 @@ ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng�
   
     <div class="article-meta">
       <a href="/2014/11/04/angularjs_notes/" class="article-date">
-  	<time datetime="2014-11-04T07:03:48.000Z" itemprop="datePublished">Nov 4 2014</time>
+  	<time datetime="2014-11-04T10:58:03.000Z" itemprop="datePublished">Nov 4 2014</time>
 </a>
       
       
@@ -158,7 +158,7 @@ ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng�
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="dirty_checking">dirty checking</h2>
-<p><a href="http://angularjs.org" target="_blank" rel="external">ng</a>会记录数据模型包含的数据项在任何特定时间点的值. 当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.<br>这样如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误. 这个坑我踩了, 自己决定数据的采集时机, 页面上只做绑定.</p>
+<p><a href="http://angularjs.org" target="_blank" rel="external">ng</a>会记录数据模型包含的数据项在任何特定时间点的值.<br>当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.<br>这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.<br><a id="more"></a><br>这个坑我踩了, 避免让ng来决定数据的采集时机, 页面上只做绑定.</p>
 
       
     </div>
@@ -173,9 +173,18 @@ ng会记录数据模型包含的数据项在任何特定时间点的值. 当ng�
     
 <nav id="article-nav">
   
+    <a href="/2014/11/04/LeariningCPP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Learning cxx
+        
+      </div>
+    </a>
   
-    <a href="/2014/11/04/LeariningCPP/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Learning cxx</div>
+  
+    <a href="/2014/11/02/Welcome-to-my-life/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Welcome to my l!fe</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
