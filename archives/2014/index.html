@@ -129,6 +129,55 @@
 </nav>
       
   
+    <article id="post-angularjs_notes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/04/angularjs_notes/" class="article-date">
+  	<time datetime="2014-11-04T07:03:48.000Z" itemprop="datePublished">Nov 4 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/04/angularjs_notes/">AngularJS(ng) 的坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="dirty_checking">dirty checking</h2>
+<p><a href="http://angularjs.org" target="_blank" rel="external">ng</a>会记录数据模型包含的数据项在任何特定时间点的值. 当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.<br>这样如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误. 这个坑我踩了, 自己决定数据的采集时机, 页面上只做绑定.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/04/angularjs_notes/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-LeariningCPP" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
