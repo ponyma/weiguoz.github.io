@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Welcome to my l!fe | Wake up, write down</title>
+  <title>Flume source关注四种类型的数据源 | Wake up, write down</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="N0t by Simple Plan">
+  <meta name="description" content="本文针对的是flume V1.4, 介绍source, channel, sink这三个串联的功能组件通常在实际系统中, 会把source端的Flume称为agent. 采集数据有两种方式:     
+
+push sources外部系统主动将数据推送到Flume, 如RPC, syslog, post
+poll sources采用轮询的方式去获取数据.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Welcome to my l!fe">
-<meta property="og:url" content="http://weiguozhu.com/2014/11/02/Welcome-to-my-life/">
+<meta property="og:title" content="Flume source关注四种类型的数据源">
+<meta property="og:url" content="http://weiguozhu.com/2014/11/06/flume_surce/">
 <meta property="og:site_name" content="Wake up, write down">
-<meta property="og:description" content="N0t by Simple Plan">
+<meta property="og:description" content="本文针对的是flume V1.4, 介绍source, channel, sink这三个串联的功能组件通常在实际系统中, 会把source端的Flume称为agent. 采集数据有两种方式:     
+
+push sources外部系统主动将数据推送到Flume, 如RPC, syslog, post
+poll sources采用轮询的方式去获取数据.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome to my l!fe">
-<meta name="twitter:description" content="N0t by Simple Plan">
+<meta name="twitter:title" content="Flume source关注四种类型的数据源">
+<meta name="twitter:description" content="本文针对的是flume V1.4, 介绍source, channel, sink这三个串联的功能组件通常在实际系统中, 会把source端的Flume称为agent. 采集数据有两种方式:     
+
+push sources外部系统主动将数据推送到Flume, 如RPC, syslog, post
+poll sources采用轮询的方式去获取数据.">
 
   
     <link rel="alternative" href="/atom.xml" title="Wake up, write down" type="application/atom+xml">
@@ -127,11 +136,11 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-Welcome-to-my-life" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-flume_surce" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/02/Welcome-to-my-life/" class="article-date">
-  	<time datetime="2014-11-01T19:25:15.000Z" itemprop="datePublished">Nov 2 2014</time>
+      <a href="/2014/11/06/flume_surce/" class="article-date">
+  	<time datetime="2014-11-06T06:00:25.000Z" itemprop="datePublished">Nov 6 2014</time>
 </a>
       
       
@@ -146,7 +155,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Welcome to my l!fe
+      Flume source关注四种类型的数据源
     </h1>
   
 
@@ -154,13 +163,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>N0t by Simple Plan</p>
+        <p>本文针对的是flume V1.4, 介绍source, channel, sink这三个串联的功能组件<br>通常在实际系统中, 会把source端的Flume称为agent. 采集数据有两种方式:     </p>
+<ul>
+<li>push sources<br>外部系统主动将数据推送到Flume, 如RPC, syslog, post</li>
+<li>poll sources<br>采用轮询的方式去获取数据.<br><a id="more"></a><br>通过配置, 可以让应用程序直接连接已有的source(除了上边提到的, 还有Avro在Flume间的通讯, DB-需要check是否有现成模块).<br>也可以继承Source, 自定义数据接入.</li>
+</ul>
+<h3 id="文本文件是常见的log接入源">文本文件是常见的log接入源</h3>
+<p>它是poll方式的</p>
+<h4 id="1_ExecSource">1 ExecSource</h4>
+<p>如使用类似tail -f, 在flume未运行的时候会丢失数据, 而且需指定文件名.</p>
+<h4 id="2_SpoolSource">2 SpoolSource</h4>
+<p>监测某个目录的新增文件, 这样就支持了分割的文件. 控制新增文件的频度, 可以实现为弱实时. 如log4j有TimeRolling插件. 值得注意的是:    </p>
+<ul>
+<li>spool目录中的文件<strong>不应该再写入</strong>    </li>
+<li>不能再包含子目录     </li>
+<li>处理完一个文件, 会修改其后缀(可配置)              </li>
+<li>应该保证文件是一次性放入spool目录(如在同一磁盘使用mv, <strong>不能是cp</strong>)      </li>
+<li>在传送某个文件期间重启Flume, 文件会再次传递      <h2 id="Channel">Channel</h2>
+Channel的实现方式有:     </li>
+<li>MemoryChannel 速度快但是无法保证数据的完整性        </li>
+<li>FileChannel 保证数据的完整和一致性. 这篇文章介绍了<a href="http://boylook.itpub.net/11676357/viewspace-1060911/" target="_blank" rel="external">Flume-ng FileChannel原理解析</a><br>其它还有JDBC Channel等<h2 id="Sink">Sink</h2>
+对应agent, sink端的Flume通常被称为collector. 通过配置, 可以向文件系统, 数据库, hdfs存数据.<br>对数据进行正则匹配, 可以写到不同的位置, 这里的例子是<a href="http://www.iforeach.com/archives/   700.html" target="_blank" rel="external"><em>Flume 正则方式收集nginx日志到Hbase hadoop</em></a><br>和Source类似, 实现Sink的子类, 可将数据写往特定目标<h2 id="可靠性">可靠性</h2>
+Flume传输的数据的基本单位是event, 如果文本文件的一行记录, event是事务的基本单位: 当event到达dest时, 才能从channel中删除.<br>Flume同时支持memory/file两种方式保存channel, 作为备份. memory方式在进程退出后就没法恢复了(<em>我不理解memory方式的作用是什么</em>)<br>Flume提供3种数据可靠性选项: End-to-end, Store on failure, Best effort. 其中End-to-end使用磁盘日志和接受端Ack的方式, 保证Flume接收到的数据会最终到达目的; Store on failure在目的不可用的时候, 数据会保持在本地硬盘. 和End-to-end不同的是, 如果是进程出现问题, Store on failure可能会丢失部分数据; Best effort不做任何QoS保证.       <h2 id="自定义与扩展">自定义与扩展</h2>
+除了可以对source和sink自定义, 还能通过SinkDecorator, 对数据进行预处理; 配置管理多个结点可以用zookeeper.      <h2 id="遇到的BUG">遇到的BUG</h2>
+1 在spooldir中放一个空文件: 序列化出错<br>2 spooldir中同时存放两个空文件: readEvents exception<br>3 先后放入两个同名文件. 可通过删除来work around</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a href="http://weiguozhu.com/2014/11/02/Welcome-to-my-life/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://weiguozhu.com/2014/11/06/flume_surce/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -169,15 +202,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/11/06/angularjs_notes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/11/06/go/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          AngularJS(ng) 的坑
+          Go之hello world
         
       </div>
     </a>
   
+  
+    <a href="/2014/11/06/hadoop-build/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hadoop搭建</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 

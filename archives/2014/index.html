@@ -129,11 +129,11 @@
 </nav>
       
   
-    <article id="post-LeariningCPP" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-go" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/04/LeariningCPP/" class="article-date">
-  	<time datetime="2014-11-04T11:08:36.000Z" itemprop="datePublished">Nov 4 2014</time>
+      <a href="/2014/11/06/go/" class="article-date">
+  	<time datetime="2014-11-06T06:02:31.000Z" itemprop="datePublished">Nov 6 2014</time>
 </a>
       
       
@@ -148,7 +148,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/04/LeariningCPP/">Learning cxx</a>
+      <a class="article-title" href="/2014/11/06/go/">Go之hello world</a>
     </h1>
   
 
@@ -156,24 +156,245 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight `c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div></pre></td></tr></table></figure>
-
-<h2 id="container">container</h2>
-<ul>
-<li><p><a href="http://www.cplusplus.com/reference/tuple/tuple/" target="_blank" rel="external"><code>tuple</code></a><br>A tuple is an object capable to hold a collection of elements. Each element can be of a different type.     </p>
-</li>
-<li><p><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream" target="_blank" rel="external"><code>stringstream</code></a><br>需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c_str()来用, 就是错误的. 如这个例子:<br><code>const char * stupid = ss.str().c_str(); // WRONG!</code>             </p>
-
+        <p>看了下目录, <strong>似乎</strong>go是对让c对程序员更友好, 如应对垃圾回收, 多返回值</p>
+<h2 id="Chapter_1:_简介">Chapter 1: 简介</h2>
+<p>rune<br>复数<br>错误类型<br>
         
           <p class="article-more-link">
-            <a href="/2014/11/04/LeariningCPP/#more">Read More >></a>
+            <a href="/2014/11/06/go/#more">Read More >></a>
           </p>
         
       
     </div>
     <footer class="article-footer">
       
-        <a href="http://weiguozhu.com/2014/11/04/LeariningCPP/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://weiguozhu.com/2014/11/06/go/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-flume_surce" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/06/flume_surce/" class="article-date">
+  	<time datetime="2014-11-06T06:00:25.000Z" itemprop="datePublished">Nov 6 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/flume_surce/">Flume source关注四种类型的数据源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文针对的是flume V1.4, 介绍source, channel, sink这三个串联的功能组件<br>通常在实际系统中, 会把source端的Flume称为agent. 采集数据有两种方式:     </p>
+<ul>
+<li>push sources<br>外部系统主动将数据推送到Flume, 如RPC, syslog, post</li>
+<li>poll sources<br>采用轮询的方式去获取数据.<br>
+        
+          <p class="article-more-link">
+            <a href="/2014/11/06/flume_surce/#more">Read More >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/06/flume_surce/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-hadoop-build" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/06/hadoop-build/" class="article-date">
+  	<time datetime="2014-11-06T05:56:55.000Z" itemprop="datePublished">Nov 6 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/hadoop-build/">Hadoop搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hadoop项目">Hadoop项目</h2>
+<ul>
+<li>zookeeper 集群管理, 配置</li>
+<li>Flume 数据收集</li>
+<li>HDFS 分布式文件系统</li>
+<li>Hive SQL 引擎</li>
+<li>MapReduce 分布式计算. MR2.0(YARN)=资源配置, 任务管理</li>
+<li>HBase K-V存储<br>
+        
+          <p class="article-more-link">
+            <a href="/2014/11/06/hadoop-build/#more">Read More >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/06/hadoop-build/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-LeariningCPP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/06/LeariningCPP/" class="article-date">
+  	<time datetime="2014-11-06T05:55:15.000Z" itemprop="datePublished">Nov 6 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/LeariningCPP/">Learning cxx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>using namespace std;</p>
+<h2 id="container">container</h2>
+<p><a href="http://www.cplusplus.com/reference/tuple/tuple/" target="_blank" rel="external"><code>tuple</code></a><br>A tuple is an object capable to hold a collection of elements. Each element can be of a different type.<br><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream" target="_blank" rel="external"><code>stringstream</code></a><br>需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c_str()来用, 就是错误的. 如这个例子:<br><code>const char * stupid = ss.str().c_str(); // WRONG!</code><br>
+        
+          <p class="article-more-link">
+            <a href="/2014/11/06/LeariningCPP/#more">Read More >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/06/LeariningCPP/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-elasticsearch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/06/elasticsearch/" class="article-date">
+  	<time datetime="2014-11-06T05:52:23.000Z" itemprop="datePublished">Nov 6 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/elasticsearch/">ElasticSearch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ElasticSearch"><a href="https://zybuluo.com/fabregas4/note/7938" target="_blank" rel="external">ElasticSearch</a></h1>
+<p>ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.</p>
+<h2 id="安装运行">安装运行</h2>
+<p>在<a href="http://www.elasticsearch.org/overview/elkdownloads/" target="_blank" rel="external">官网下载</a>, 解压就即可运行. <em>run.sh</em> 是一个简单的启动脚本, 需指定elasticsearch所在目录.</p>
+<h2 id="插件">插件</h2>
+<ul>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">中文分词 - analysis-ik</a><br>需要把插件和配置从<a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="external">elasticsearch-rtf</a>(整合了N多插件)中拷贝到我们的安装目录. 该插件支持细粒度和智能分词两种模式, 在elasticsearch.yml添加配置项; 修改config/ik/IKAnalyzer.cfg.xml  可配置扩展词典.<br>
+        
+          <p class="article-more-link">
+            <a href="/2014/11/06/elasticsearch/#more">Read More >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/06/elasticsearch/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -191,8 +412,8 @@
     <article id="post-angularjs_notes" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/04/angularjs_notes/" class="article-date">
-  	<time datetime="2014-11-04T10:58:03.000Z" itemprop="datePublished">Nov 4 2014</time>
+      <a href="/2014/11/06/angularjs_notes/" class="article-date">
+  	<time datetime="2014-11-06T05:24:25.000Z" itemprop="datePublished">Nov 6 2014</time>
 </a>
       
       
@@ -207,7 +428,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/04/angularjs_notes/">AngularJS(ng) 的坑</a>
+      <a class="article-title" href="/2014/11/06/angularjs_notes/">AngularJS(ng) 的坑</a>
     </h1>
   
 
@@ -216,17 +437,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="dirty_checking">dirty checking</h2>
-<p><a href="http://angularjs.org" target="_blank" rel="external">ng</a>会记录数据模型包含的数据项在任何特定时间点的值.<br>当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.<br>这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.<br>
-        
-          <p class="article-more-link">
-            <a href="/2014/11/04/angularjs_notes/#more">Read More >></a>
-          </p>
-        
+<p><a href="http://angularjs.org" target="_blank" rel="external">ng</a>会记录数据模型包含的数据项在任何特定时间点的值.<br>当ng认为某个值可能发生变化时, 它会运行自己的事件循环来采集这个值. 这也是ng可以跟踪和响应应用变化的方式, 有点类似高级语言的垃圾回收机制.<br>这样, 如果在页面上绑定函数调用, 让ng来决定值采集的时机, 可能会报错infdig错误.<br>这个坑我踩了, 避免让ng来决定数据的采集时机, 页面上只做绑定.</p>
+
       
     </div>
     <footer class="article-footer">
       
-        <a href="http://weiguozhu.com/2014/11/04/angularjs_notes/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://weiguozhu.com/2014/11/06/angularjs_notes/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>

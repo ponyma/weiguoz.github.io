@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ElasticSearch | Wake up, write down</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ElasticSearch
+ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+安装运行
+在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
+插件
+
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch">
+<meta property="og:url" content="http://weiguozhu.com/2014/11/06/elasticsearch/">
+<meta property="og:site_name" content="Wake up, write down">
+<meta property="og:description" content="ElasticSearch
+ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+安装运行
+在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
+插件
+
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ElasticSearch">
+<meta name="twitter:description" content="ElasticSearch
+ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+安装运行
+在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
+插件
+
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Wake up, write down" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://en.gravatar.com/userimage/5450545/4269ed74da6cd8f0a05822e6c6f5f2f0.jpg?size=200">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Weiguo</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">晨游百花林 朱朱兼白白</p>
+		
+
+		
+			<div class="onoffswitch">
+			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+			</div>
+		
+
+		<div class="switch-area">
+			<section class="first-part">
+				<nav class="header-menu">
+					<ul>
+					
+						<li><a href="/">Home</a></li>
+			        
+						<li><a href="/archives">Archives</a></li>
+			        
+					</ul>
+				</nav>
+				<nav class="header-nav">
+					<div class="social">
+						
+							<a class="github" target="_blank" href="https://github.com/weiguoz" title="github">github</a>
+				        
+							<a class="facebook" target="_blank" href="https://www.facebook.com/weiguoz" title="facebook">facebook</a>
+				        
+							<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/weiguozhu" title="linkedin">linkedin</a>
+				        
+					</div>
+				</nav>
+			</section>
+			
+			
+			<section class="second-part">
+				<div class="widget tagcloud">
+					
+				</div>
+			</section>
+			
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://en.gravatar.com/userimage/5450545/4269ed74da6cd8f0a05822e6c6f5f2f0.jpg?size=200">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">Weiguo</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">晨游百花林 朱朱兼白白</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/weiguoz" title="github">github</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/weiguoz" title="facebook">facebook</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/weiguozhu" title="linkedin">linkedin</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-elasticsearch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/06/elasticsearch/" class="article-date">
+  	<time datetime="2014-11-06T05:52:23.000Z" itemprop="datePublished">Nov 6 2014</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ElasticSearch
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ElasticSearch"><a href="https://zybuluo.com/fabregas4/note/7938" target="_blank" rel="external">ElasticSearch</a></h1>
+<p>ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.</p>
+<h2 id="安装运行">安装运行</h2>
+<p>在<a href="http://www.elasticsearch.org/overview/elkdownloads/" target="_blank" rel="external">官网下载</a>, 解压就即可运行. <em>run.sh</em> 是一个简单的启动脚本, 需指定elasticsearch所在目录.</p>
+<h2 id="插件">插件</h2>
+<ul>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">中文分词 - analysis-ik</a><br>需要把插件和配置从<a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="external">elasticsearch-rtf</a>(整合了N多插件)中拷贝到我们的安装目录. 该插件支持细粒度和智能分词两种模式, 在elasticsearch.yml添加配置项; 修改config/ik/IKAnalyzer.cfg.xml  可配置扩展词典.<br><a id="more"></a><br>建索引时, 通过mapping来指定分词插件.  <em>test_ik.sh</em>是一个测试功能的例子.<h2 id="配置文件">配置文件</h2>
+参看 <strong>elasticsearch.yml</strong>.<h3 id="分布式(跨网段)部署,_需修改默认配置">分布式(跨网段)部署, 需修改默认配置</h3>
+</li>
+<li><code>cluster.name: ce_709_es</code> 指定同一集群的名称</li>
+<li><code>discovery.zen.minimum_master_nodes: 2</code><br>至少要多少个master活着的时候, 结点才会工作. 举例来说, 若有两个结点可被选为master, 那么: 当该参数设置&gt;=2, 此时主master挂了, 整个集群就不再提供服务了; 若参数为1, 那么会重新选举, 正常对外服务. 建议设置为2~4</li>
+<li><code>discovery.zen.ping.multicast.enabled: false</code> 设置为false</li>
+<li><code>discovery.zen.ping.unicast.hosts: [&quot;10.105.75.127:9300&quot;, &quot;10.105.75.185:9300&quot;]</code><br>用来发现集群的服务器, 一般作为master列表. 也就是说, 一个清晰合理的结构, 该列表中的服务器应设置<code>node.master: true</code>, 否则<code>node.master: false</code></li>
+<li><code>node.name: &quot;dev&quot;</code><br>为了便于工具管理, 建议配置node的名字</li>
+<li><code>network.host: 10.105.75.185</code><br>master列表的机器, 应该配置自己的网络地址, 避免多网卡时不确定绑定了哪一个IP.<h3 id="插件的配置">插件的配置</h3>
+一般只在elasticsearcy.yml进行全局配置</li>
+</ul>
+<h2 id="工具">工具</h2>
+<p>elasticsearch-head工具可以查看集群的运行,索引等参数, 以及表达式测试.<br>river是非常重要的一项功能, 如<a href="http://www.pilato.fr/fsriver/" target="_blank" rel="external">http://www.pilato.fr/fsriver/</a> 可以同步目录文件到索引, 如果以后项目需要可以添加进来.</p>
+<h2 id="Features">Features</h2>
+<h3 id="highlight_&amp;&amp;_summary"><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-highlighting.html" target="_blank" rel="external">highlight</a> &amp;&amp; <a href="">summary</a></h3>
+<p>这俩经常是一块儿的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">curl -XPOST http:<span class="comment">//$ELASTICSEARCH_SERVER:9200/$INDEX_NAME/fulltext/_search  -d' {</span></div><div class="line"><span class="string">"query"</span> : { <span class="string">"term"</span> : { <span class="string">"content"</span> : <span class="string">"中国"</span> }},</div><div class="line">    <span class="string">"highlight"</span> : {</div><div class="line">        <span class="string">"pre_tags"</span> : [<span class="string">"&lt;tag1&gt;"</span>, <span class="string">"&lt;tag2&gt;"</span>],</div><div class="line">        <span class="string">"post_tags"</span> : [<span class="string">"&lt;/tag1&gt;"</span>, <span class="string">"&lt;/tag2&gt;"</span>],</div><div class="line">        <span class="string">"fields"</span> : {</div><div class="line">            <span class="string">"content"</span> : {}</div><div class="line">        }</div><div class="line">    }</div><div class="line">} <span class="string">'</span></div></pre></td></tr></table></figure>
+
+<p><code>addHighlightedField($name, $frag_size, $num, $offset)</code><br><code>$response.getHits()[$i].getHighlightFields().get($field).getFragments()[0].string()</code><br>getFragments()[0] 这儿0对应第一个addHighlightedField, 返回的是最匹配的局部段落</p>
+<h3 id="scripting"><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/modules-scripting.html" target="_blank" rel="external">scripting</a></h3>
+<p><a href="http://www.slideshare.net/medcl/elastic-search-training2-advanced-concepts" target="_blank" rel="external">scripting模块允许用户通过自定义脚本修改评分计算，影响搜索结果。脚本可以存放在相应的目录预加载或者直接写在查询里</a>(PPT第八页).<br><strong>支持的语言</strong> 默认的是mvel, 通过lang-plugin可支持js, groovy, python.<br><strong>支持热更新脚本</strong><br>修改评分 <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/modules-advanced-scripting.html" target="_blank" rel="external">text scoring in scripts</a>的一个使用<a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-request-sort.html#_script_based_sorting" target="_blank" rel="external">范例</a>: <code>&quot;script&quot; : doc[&#39;field_name&#39;].value * factor</code><br>更简化的方式可使用<code>function_score</code></p>
+<h3 id="rescoring">rescoring</h3>
+<p>通过二次打分, 来影响文档的排序. 通常在查询(不支持COUNT/SCAN)或过滤器执行完毕, 将当前shard上的结果返回进行汇总前执行. 二次打分往往是更慢的计算.(如: 上边提到的scripting)</p>
+<ul>
+<li>the query rescorer<br>通过一个query来修改得分. 在shards上对第一次查询的window_size条结果进行二次评分, 可以指定前后两次查询的权重: query_weight/rescore_query_weight. 两次评分可以做 add(default)/multiply/average/max/min</li>
+<li>multiple rescores (&gt;=V1.1.0)<br>多重级联的打分. 先按下不表</li>
+</ul>
+<p>本身是基于索引的, 对我们的需求(10多个敏感词), 性能上不会有问题. 也可指定权重. 问题是, 如果结果来自两种索引, 无法控制单个索引中的搜出来的数量, 只能按索引的权值来配置. 除非按索引分开查询</p>
+<p><a href="http://jaibeermalik.wordpress.com/2013/04/10/elasticsearch-boosting-score-for-content-relevancy/" target="_blank" rel="external">boosts everything</a><br>先查个人身份. 自行排序, 后缀树(叶结点带上权重)做多模式匹配. 相当于再遍历所有文档的内容. 然后用户有个访问的session, 来实现翻页.</p>
+<h3 id="mapping">mapping</h3>
+<p>定义搜索引擎如何处理一个缩影文档的过程. 包括文档的搜索特征, 如类型, 如何切词. 关于如何切词, 可在配置文件统一配, 也可在建索引时指定.<br><a href="http://donlianli.iteye.com/blog/1923017" target="_blank" rel="external">不创建analyzer, 搜索时使用*gxy*进行wildcard搜索, 把这个检索跟oracle的like进行比较. 发现oracle用20ms就能算出结果, 而es却用了将近100ms</a></p>
+<h3 id="filter">filter</h3>
+<p><a href="http://log.medcl.net/item/2013/09/elasticsearch-inside-the-various-filter/" target="_blank" rel="external">一篇如何高效使用过滤器的文章</a></p>
+<h2 id="参考站点">参考站点</h2>
+<p>1 中文分词插件ik作者: <a href="http://log.medcl.net/" target="_blank" rel="external">http://log.medcl.net/</a><br>2 <a href="http://www.slideshare.net/medcl/elastic-search-training1-brief-tutoria" target="_blank" rel="external">http://www.slideshare.net/medcl/elastic-search-training1-brief-tutoria</a><br>3 <a href="http://www.slideshare.net/medcl/elastic-search-training2-advanced-concepts" target="_blank" rel="external">http://www.slideshare.net/medcl/elastic-search-training2-advanced-concepts</a><br>4 <a href="https://github.com/dadoonet/spring-elasticsearch/blob/master/src/main/java/fr/pilato/spring/elasticsearch/ElasticsearchAbstractClientFactoryBean.java" target="_blank" rel="external">client API</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a href="http://weiguozhu.com/2014/11/06/elasticsearch/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/06/LeariningCPP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Learning cxx
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/06/angularjs_notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AngularJS(ng) 的坑</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+<section id="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wgz2'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 Weiguo
+    	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

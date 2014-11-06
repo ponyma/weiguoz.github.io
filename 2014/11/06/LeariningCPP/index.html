@@ -5,33 +5,21 @@
   
   <title>Learning cxx | Wake up, write down</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1using namespace std;
-
+  <meta name="description" content="using namespace std;
 container
-
-tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.     
-
-stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如">
+tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning cxx">
-<meta property="og:url" content="http://weiguozhu.com/2014/11/04/LeariningCPP/">
+<meta property="og:url" content="http://weiguozhu.com/2014/11/06/LeariningCPP/">
 <meta property="og:site_name" content="Wake up, write down">
-<meta property="og:description" content="1using namespace std;
-
+<meta property="og:description" content="using namespace std;
 container
-
-tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.     
-
-stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如">
+tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning cxx">
-<meta name="twitter:description" content="1using namespace std;
-
+<meta name="twitter:description" content="using namespace std;
 container
-
-tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.     
-
-stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如">
+tupleA tuple is an object capable to hold a collection of elements. Each element can be of a different type.stringstream需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c">
 
   
     <link rel="alternative" href="/atom.xml" title="Wake up, write down" type="application/atom+xml">
@@ -148,8 +136,8 @@ stringstream需要注意的是, stringstream.str()返回一个临时对象, 因�
       <article id="post-LeariningCPP" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/04/LeariningCPP/" class="article-date">
-  	<time datetime="2014-11-04T11:08:36.000Z" itemprop="datePublished">Nov 4 2014</time>
+      <a href="/2014/11/06/LeariningCPP/" class="article-date">
+  	<time datetime="2014-11-06T05:55:15.000Z" itemprop="datePublished">Nov 6 2014</time>
 </a>
       
       
@@ -172,31 +160,11 @@ stringstream需要注意的是, stringstream.str()返回一个临时对象, 因�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight `c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div></pre></td></tr></table></figure>
-
+        <p>using namespace std;</p>
 <h2 id="container">container</h2>
-<ul>
-<li><p><a href="http://www.cplusplus.com/reference/tuple/tuple/" target="_blank" rel="external"><code>tuple</code></a><br>A tuple is an object capable to hold a collection of elements. Each element can be of a different type.     </p>
-</li>
-<li><p><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream" target="_blank" rel="external"><code>stringstream</code></a><br>需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c_str()来用, 就是错误的. 如这个例子:<br><code>const char * stupid = ss.str().c_str(); // WRONG!</code>             </p>
-<a id="more"></a>
-</li>
-<li><p><a href="http://www.boost.org/doc/libs/1_54_0/libs/multi_array/doc/index.html" target="_blank" rel="external"><code>boost::MultiArray</code></a></p>
-</li>
-</ul>
+<p><a href="http://www.cplusplus.com/reference/tuple/tuple/" target="_blank" rel="external"><code>tuple</code></a><br>A tuple is an object capable to hold a collection of elements. Each element can be of a different type.<br><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream" target="_blank" rel="external"><code>stringstream</code></a><br>需要注意的是, stringstream.str()返回一个临时对象, 因此如果再不伦不类的配合c_str()来用, 就是错误的. 如这个例子:<br><code>const char * stupid = ss.str().c_str(); // WRONG!</code><br><a id="more"></a><br><a href="http://www.boost.org/doc/libs/1_54_0/libs/multi_array/doc/index.html" target="_blank" rel="external"><code>boost::MultiArray</code></a></p>
 <h2 id="method">method</h2>
-<ul>
-<li><p><a href="http://www.cplusplus.com/reference/algorithm/lower_bound/" target="_blank" rel="external"><code>lower_bound(first, last, val, operator&lt;)</code></a><br>Returns an <strong>iterator</strong> pointing to the <strong>first</strong> element in the range <em>[first,last)</em> which does not compare <strong>less</strong> than: &gt;= val. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/upper_bound/" target="_blank" rel="external"><code>upper_bound</code></a>         </p>
-</li>
-<li><p><a href="http://www.cplusplus.com/reference/iterator/prev/?kw=prev" target="_blank" rel="external"><code>prev(iterator, n=1)</code></a><br>Returns an <strong>iterator</strong> pointing to the element that it would be pointing to if advanced -n positions. See also:<br><a href="http://www.cplusplus.com/reference/iterator/next/" target="_blank" rel="external"><code>next</code></a> <a href="http://www.cplusplus.com/reference/iterator/advance/" target="_blank" rel="external"><code>advance</code></a> <a href="http://www.cplusplus.com/reference/iterator/distance/" target="_blank" rel="external"><code>distance</code></a>    </p>
-</li>
-<li><p><a href="http://en.cppreference.com/w/cpp/algorithm/max_element" target="_blank" rel="external"><code>max_element(first, last, operator&lt;)</code></a><br>Finds the greatest element in the range [first, last). See also:<br><a href="http://www.cplusplus.com/reference/algorithm/min_element/" target="_blank" rel="external"><code>min_element</code></a></p>
-</li>
-<li><p><a href="http://en.cppreference.com/w/cpp/algorithm/accumulate" target="_blank" rel="external"><code>accumulate(first, last, init, BinaryOperation/functor/lambda...)</code></a><br>Computes the sum of the given value init and the elements in the range [first, last). The first version uses operator+ to sum up the elements, the second version uses the given binary function op. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/transform/" target="_blank" rel="external"><code>transfrom(inFirst, inLast, outFirst, operator)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/for_each" target="_blank" rel="external"><code>for_each(first, last, UnaryFunction/lambda...)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/copy" target="_blank" rel="external"><code>copy</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/copy_backward" target="_blank" rel="external"><code>copy_backward</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/remove_copy" target="_blank" rel="external"><code>remove_copy</code></a> …<br><a href="http://en.cppreference.com/w/cpp/algorithm/fill" target="_blank" rel="external"><code>fill</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/fill_n" target="_blank" rel="external"><code>fill_n</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/generate" target="_blank" rel="external"><code>generate</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/replace" target="_blank" rel="external"><code>replace</code></a><br><a href="http://en.cppreference.com/w/cpp/string/byte/toupper" target="_blank" rel="external"><code>toupper</code></a></p>
-</li>
-<li><p><a href="http://en.cppreference.com/w/cpp/utility/functional/bind" target="_blank" rel="external"><code>bind(F&amp;&amp; f, Args&amp;&amp;... args)</code></a>, <a href="http://en.cppreference.com/w/cpp/utility/functional/placeholders" target="_blank" rel="external">placeholder: <code>_1, _2...</code></a><br>(函数偏特化) The function template bind generates a forwarding call wrapper for f. Calling this wrapper is equivalent to invoking f with some of its arguments bound to args. See also:<br><a href="http://www.cplusplus.com/reference/functional/bind1st/?kw=bind1st" target="_blank" rel="external"><code>bind1st</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/mem_fn" target="_blank" rel="external"><code>mem_fn</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/function" target="_blank" rel="external"><code>function</code></a> <a href="http://en.cppreference.com/w/cpp/language/decltype" target="_blank" rel="external"><code>decltype</code></a></p>
-</li>
-</ul>
+<p><a href="http://www.cplusplus.com/reference/algorithm/lower_bound/" target="_blank" rel="external"><code>lower_bound(first, last, val, operator&lt;)</code></a><br>Returns an <strong>iterator</strong> pointing to the <strong>first</strong> element in the range <em>[first,last)</em> which does not compare <strong>less</strong> than: &gt;= val. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/upper_bound/" target="_blank" rel="external"><code>upper_bound</code></a><br><a href="http://www.cplusplus.com/reference/iterator/prev/?kw=prev" target="_blank" rel="external"><code>prev(iterator, n=1)</code></a><br>Returns an <strong>iterator</strong> pointing to the element that it would be pointing to if advanced -n positions. See also:<br><a href="http://www.cplusplus.com/reference/iterator/next/" target="_blank" rel="external"><code>next</code></a> <a href="http://www.cplusplus.com/reference/iterator/advance/" target="_blank" rel="external"><code>advance</code></a> <a href="http://www.cplusplus.com/reference/iterator/distance/" target="_blank" rel="external"><code>distance</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/max_element" target="_blank" rel="external"><code>max_element(first, last, operator&lt;)</code></a><br>Finds the greatest element in the range [first, last). See also:<br><a href="http://www.cplusplus.com/reference/algorithm/min_element/" target="_blank" rel="external"><code>min_element</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/accumulate" target="_blank" rel="external"><code>accumulate(first, last, init, BinaryOperation/functor/lambda...)</code></a><br>Computes the sum of the given value init and the elements in the range [first, last). The first version uses operator+ to sum up the elements, the second version uses the given binary function op. See also:<br><a href="http://www.cplusplus.com/reference/algorithm/transform/" target="_blank" rel="external"><code>transfrom(inFirst, inLast, outFirst, operator)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/for_each" target="_blank" rel="external"><code>for_each(first, last, UnaryFunction/lambda...)</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/copy" target="_blank" rel="external"><code>copy</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/copy_backward" target="_blank" rel="external"><code>copy_backward</code></a> <a href="http://en.cppreference.com/w/cpp/algorithm/remove_copy" target="_blank" rel="external"><code>remove_copy</code></a> …<br><a href="http://en.cppreference.com/w/cpp/algorithm/fill" target="_blank" rel="external"><code>fill</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/fill_n" target="_blank" rel="external"><code>fill_n</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/generate" target="_blank" rel="external"><code>generate</code></a><br><a href="http://en.cppreference.com/w/cpp/algorithm/replace" target="_blank" rel="external"><code>replace</code></a><br><a href="http://en.cppreference.com/w/cpp/string/byte/toupper" target="_blank" rel="external"><code>toupper</code></a><br><a href="http://en.cppreference.com/w/cpp/utility/functional/bind" target="_blank" rel="external"><code>bind(F&amp;&amp; f, Args&amp;&amp;... args)</code></a>, <a href="http://en.cppreference.com/w/cpp/utility/functional/placeholders" target="_blank" rel="external">placeholder: <code>_1, _2...</code></a><br>(函数偏特化) The function template bind generates a forwarding call wrapper for f. Calling this wrapper is equivalent to invoking f with some of its arguments bound to args. See also:<br><a href="http://www.cplusplus.com/reference/functional/bind1st/?kw=bind1st" target="_blank" rel="external"><code>bind1st</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/mem_fn" target="_blank" rel="external"><code>mem_fn</code></a> <a href="http://en.cppreference.com/w/cpp/utility/functional/function" target="_blank" rel="external"><code>function</code></a> <a href="http://en.cppreference.com/w/cpp/language/decltype" target="_blank" rel="external"><code>decltype</code></a></p>
 <h2 id="Concurrent:_A_lecture_posted_on_youtube_by_Qian_Bo"><a href="http://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M" target="_blank" rel="external">Concurrent: A lecture posted on youtube by Qian Bo</a></h2>
 <p><code>clang++ -DDBG -D_GLIBCXX_USE_NANOSLEEP -Wall -Wextra -Werror -Wshadow -std=c++11 -lpthread -g -o $TARGET $SRC</code>       </p>
 <h4 id="Thread">Thread</h4>
@@ -235,14 +203,10 @@ stringstream需要注意的是, stringstream.str()返回一个临时对象, 因�
 <p><strong>注释中的理由</strong>: 考虑wait的内部实现, 其实它本身是sleep了, 然后通过notify来唤醒. 毫无意外的, 它必须一开始调用unlock()来避免额外地占用锁, 并且在唤醒后重新lock()来获取锁. 而这一步的过程可能出现<strong>suprious sleep</strong>, 在重新获得锁之后可能唤醒条件又不成立了: q非空, 所以需要第二个函数参数来再次确定.</p>
 <h4 id="Future,_Promise_and_async">Future, Promise and async</h4>
 <p>都是异步机制(基于线程)的通信工具          </p>
-<ul>
-<li><code>future</code>:子线程返回给主线程                    </li>
-</ul>
+<p><code>future</code>:子线程返回给主线程                    </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> factorialR(<span class="keyword">int</span> N) { <span class="keyword">return</span> N&lt;=<span class="number">1</span> ? <span class="number">1</span> : N*factorialR(N-<span class="number">1</span>); }</div><div class="line"><span class="keyword">int</span> main() {</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu=std::async(std::launch::deferred<span class="comment">/*std::launch::async*/</span>, factorialR, <span class="number">4</span>);</div><div class="line">    <span class="keyword">int</span> x = fu.get(); <span class="comment">// call once only</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
 
-<ul>
-<li><code>promise</code>:主线程传递给子线程                                     </li>
-</ul>
+<p><code>promise</code>:主线程传递给子线程                                     </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> ffactorial(std::future&lt;<span class="keyword">int</span>&gt; &f) {</div><div class="line">    <span class="keyword">int</span> N = f.get(); <span class="comment">// call once only</span></div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=N; ++i) ans *= i;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// can be copied!!!因此, 可用来对各子线程进行广播, 而f只能在一个线程上使用</span></div><div class="line"><span class="keyword">int</span> sfactorial(std::shared_future&lt;<span class="keyword">int</span>&gt; f) {</div><div class="line">    <span class="keyword">int</span> N = f.get(); <span class="comment">// get promise or exception: future_err::broken_promise</span></div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=N; ++i) ans *= i;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> testFuture() {</div><div class="line">    std::promise&lt;<span class="keyword">int</span>&gt; p; <span class="comment">// both promise & future only be moved but not copied/assigned...</span></div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; f = p.get_future();</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu = std::async(std::launch::deferred, ffactorial, std::ref(f));</div><div class="line">    std::this_thread::sleep_for(chrono::milliseconds(<span class="number">20</span>));<span class="comment">// so something else</span></div><div class="line">    p.set_value(<span class="number">4</span>);</div><div class="line">    <span class="keyword">int</span> x = fu.get(); <span class="comment">// gocha!</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child: "</span> &lt;&lt; x &lt;&lt; endl;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">void</span> testSharedFuture() {</div><div class="line">    std::promise&lt;<span class="keyword">int</span>&gt; p;</div><div class="line">    std::shared_future&lt;<span class="keyword">int</span>&gt; sf = p.get_future();</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu1 = std::async(std::launch::deferred, sfactorial, sf);</div><div class="line">    std::future&lt;<span class="keyword">int</span>&gt; fu2 = std::async(std::launch::deferred, sfactorial, sf);</div><div class="line">    p.set_value(<span class="number">5</span>); <span class="comment">// make promise or p.set_exception(std::make_exception_ptr(std::runtime_error("human err")));</span></div><div class="line">    <span class="keyword">int</span> x1 = fu1.get();</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child1: "</span> &lt;&lt; x1 &lt;&lt; endl;</div><div class="line">    <span class="comment">// p.set_value(3); set againt is not allowed</span></div><div class="line">    <span class="keyword">int</span> x2 = fu2.get();</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"get from child: "</span> &lt;&lt; x2 &lt;&lt; endl;</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h4 id="packaged_task"><a href="http://en.cppreference.com/w/cpp/thread/packaged_task" target="_blank" rel="external">packaged_task</a></h4>
@@ -271,7 +235,7 @@ stringstream需要注意的是, stringstream.str()返回一个临时对象, 因�
     </div>
     <footer class="article-footer">
       
-        <a href="http://weiguozhu.com/2014/11/04/LeariningCPP/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://weiguozhu.com/2014/11/06/LeariningCPP/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -280,9 +244,18 @@ stringstream需要注意的是, stringstream.str()返回一个临时对象, 因�
     
 <nav id="article-nav">
   
+    <a href="/2014/11/06/hadoop-build/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Hadoop搭建
+        
+      </div>
+    </a>
   
-    <a href="/2014/11/04/angularjs_notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AngularJS(ng) 的坑</div>
+  
+    <a href="/2014/11/06/elasticsearch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ElasticSearch</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
