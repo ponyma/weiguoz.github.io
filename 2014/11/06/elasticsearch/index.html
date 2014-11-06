@@ -5,33 +5,30 @@
   
   <title>ElasticSearch | Wake up, write down</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ElasticSearch
-ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+  <meta name="description" content="ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
 安装运行
 在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
 插件
 
-中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch">
 <meta property="og:url" content="http://weiguozhu.com/2014/11/06/elasticsearch/">
 <meta property="og:site_name" content="Wake up, write down">
-<meta property="og:description" content="ElasticSearch
-ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+<meta property="og:description" content="ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
 安装运行
 在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
 插件
 
-中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ElasticSearch">
-<meta name="twitter:description" content="ElasticSearch
-ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
+<meta name="twitter:description" content="ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.
 安装运行
 在官网下载, 解压就即可运行. run.sh 是一个简单的启动脚本, 需指定elasticsearch所在目录.
 插件
 
-中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)中拷贝到我们的安装目录. 该">
+中文分词 - analysis-ik需要把插件和配置从elasticsearch-rtf(整合了N多插件)">
 
   
     <link rel="alternative" href="/atom.xml" title="Wake up, write down" type="application/atom+xml">
@@ -149,7 +146,7 @@ ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的�
   
     <div class="article-meta">
       <a href="/2014/11/06/elasticsearch/" class="article-date">
-  	<time datetime="2014-11-06T05:52:23.000Z" itemprop="datePublished">Nov 6 2014</time>
+  	<time datetime="2014-11-06T06:05:27.000Z" itemprop="datePublished">Nov 6 2014</time>
 </a>
       
       
@@ -172,13 +169,12 @@ ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ElasticSearch"><a href="https://zybuluo.com/fabregas4/note/7938" target="_blank" rel="external">ElasticSearch</a></h1>
-<p>ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.</p>
+        <p>ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的快速安装和配置及其功能特性.</p>
 <h2 id="安装运行">安装运行</h2>
 <p>在<a href="http://www.elasticsearch.org/overview/elkdownloads/" target="_blank" rel="external">官网下载</a>, 解压就即可运行. <em>run.sh</em> 是一个简单的启动脚本, 需指定elasticsearch所在目录.</p>
 <h2 id="插件">插件</h2>
 <ul>
-<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">中文分词 - analysis-ik</a><br>需要把插件和配置从<a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="external">elasticsearch-rtf</a>(整合了N多插件)中拷贝到我们的安装目录. 该插件支持细粒度和智能分词两种模式, 在elasticsearch.yml添加配置项; 修改config/ik/IKAnalyzer.cfg.xml  可配置扩展词典.<br><a id="more"></a><br>建索引时, 通过mapping来指定分词插件.  <em>test_ik.sh</em>是一个测试功能的例子.<h2 id="配置文件">配置文件</h2>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">中文分词 - analysis-ik</a><br>需要把插件和配置从<a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="external">elasticsearch-rtf</a>(整合了N多插件)<a id="more"></a>中拷贝到我们的安装目录. 该插件支持细粒度和智能分词两种模式, 在elasticsearch.yml添加配置项; 修改config/ik/IKAnalyzer.cfg.xml  可配置扩展词典.<br>建索引时, 通过mapping来指定分词插件.  <em>test_ik.sh</em>是一个测试功能的例子.<h2 id="配置文件">配置文件</h2>
 参看 <strong>elasticsearch.yml</strong>.<h3 id="分布式(跨网段)部署,_需修改默认配置">分布式(跨网段)部署, 需修改默认配置</h3>
 </li>
 <li><code>cluster.name: ce_709_es</code> 指定同一集群的名称</li>
@@ -227,18 +223,9 @@ ES是基于lucene的分布式搜索引擎, 下边以 V1.0 为例, 介绍它的�
     
 <nav id="article-nav">
   
-    <a href="/2014/11/06/LeariningCPP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          Learning cxx
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/06/angularjs_notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AngularJS(ng) 的坑</div>
+    <a href="/2014/11/06/go/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Go之hello world</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
