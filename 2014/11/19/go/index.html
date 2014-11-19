@@ -10,7 +10,7 @@ Chapter 1: 简介
 rune复数错误类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go之hello world">
-<meta property="og:url" content="http://weiguozhu.com/2014/11/06/go/">
+<meta property="og:url" content="http://weiguozhu.com/2014/11/19/go/">
 <meta property="og:site_name" content="Wake up, write down">
 <meta property="og:description" content="看了下目录, 似乎go是对让c对程序员更友好, 如应对垃圾回收, 多返回值
 Chapter 1: 简介
@@ -136,8 +136,8 @@ rune复数错误类型">
       <article id="post-go" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/11/06/go/" class="article-date">
-  	<time datetime="2014-11-06T06:02:31.000Z" itemprop="datePublished">Nov 6 2014</time>
+      <a href="/2014/11/19/go/" class="article-date">
+  	<time datetime="2014-11-19T07:45:22.000Z" itemprop="datePublished">Nov 19 2014</time>
 </a>
       
       
@@ -162,38 +162,38 @@ rune复数错误类型">
       
         <p>看了下目录, <strong>似乎</strong>go是对让c对程序员更友好, 如应对垃圾回收, 多返回值</p>
 <h2 id="Chapter_1:_简介">Chapter 1: 简介</h2>
-<p>rune<br>复数<br>错误类型<br><a id="more"></a><br>Go 没有逗号表达式, 如果想在 for 中 执行多个变量,应当使用 平行赋值。</p>
-<figure class="highlight //"><figcaption><span>Reverse a</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>,<span class="built_in">j</span>:=<span class="number">0</span>, len(a)-<span class="number">1</span>; <span class="built_in">i</span>&lt;<span class="built_in">j</span>; <span class="built_in">i</span>,<span class="built_in">j</span>=<span class="built_in">i</span>+<span class="number">1</span>,<span class="built_in">j</span>-<span class="number">1</span> <span class="cell">{</span></div><div class="line">    a[i], a[j] = a[j], a[i] ← 平行赋值 </div><div class="line">}</div></pre></td></tr></table></figure>
+<p>rune<br>复数<br>错误类型<br><a id="more"></a><br>Go没有逗号表达式, 如果想在for中执行多个变量,应当使用平行赋值.</p>
+<figure class="highlight //"><figcaption><span>Reverse a</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> <span class="built_in">i</span>,<span class="built_in">j</span> := <span class="number">0</span>,len(a)-<span class="number">1</span>; <span class="built_in">i</span>&lt;<span class="built_in">j</span>; <span class="built_in">i</span>,<span class="built_in">j</span> = <span class="built_in">i</span>+<span class="number">1</span>,<span class="built_in">j</span>-<span class="number">1</span> <span class="cell">{</span></div><div class="line">    a[i], a[j] = a[j], a[i] // 平行赋值</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h3 id="range">range</h3>
 <h3 id="switch">switch</h3>
-<p>switch, fallthrough(是break的反面, 这样就无需break了; 同时case之间是逐个尝试的, case可以使用逗号分隔列表)</p>
+<p>switch, fallthrough(是break的反面, 这样就无需break了<br>同时case之间是逐个尝试的, case可以使用逗号分隔列表)</p>
 <h3 id="数组">数组</h3>
-<p>a := […]int{1, 2, 3},Go 会自动统计元素 的个数.<br>将一个数组赋值 给另一个数组,会复制所有的元素。尤其是当向函数内传递一个数组的时候,它会获 得一个数组的副本,而不是数组的指针。</p>
+<p>a := […]int{1, 2, 3}, Go会自动统计元素的个数.<br>将一个数组赋值给另一个数组, 会复制所有的元素.<br>尤其是当向函数内传递一个数组的时候, 它会获得一个数组的副本, 而不是数组的指针</p>
 <h3 id="slice是引用类型,_对应vector">slice是引用类型, 对应vector</h3>
 <p>引用类型使用make创建<br>变参是slice类型<br>赋值只是指针赋值, 对值赋值应该用copy?</p>
 <h2 id="chapter_2_函数">chapter 2 函数</h2>
 <h3 id="defer">defer</h3>
-<p>延迟代码, 注意defers的LIFO特点.</p>
+<p>延迟代码, 注意defers的LIFO特点</p>
 <h3 id="一个复杂声(定)明(义)">一个复杂声(定)明(义)</h3>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xs = <span class="built_in">map</span>[int]<span class="func"><span class="keyword">func</span><span class="params">()</span></span> int {</div><div class="line">    <span class="number">1</span>: <span class="func"><span class="keyword">func</span><span class="params">()</span></span> int { <span class="keyword">return</span> <span class="number">10</span> },</div><div class="line">    <span class="number">2</span>: <span class="func"><span class="keyword">func</span><span class="params">()</span></span> int { <span class="keyword">return</span> <span class="number">20</span> },</div><div class="line">    <span class="number">3</span>: <span class="func"><span class="keyword">func</span><span class="params">()</span></span> int { <span class="keyword">return</span> <span class="number">30</span> }, <span class="comment">/* 此处必须要有逗号 */</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h3 id="大杀器:_panic/recover">大杀器: panic/recover</h3>
-<p><strong>Panic</strong><br>是一个内建函数,可以中断原有的控制流程,进入一个令人恐慌的流程中。当函数F调用panic,F的执行被中断,接着执行F中的延迟函数,然后F返回到调用它的地方。在调用的地方,F的行为就像调用了panic。这一过程继续向上,直到程序崩溃时的所有 goroutine 返回。<br>恐慌可以直接调用 panic产生。也可以由运行时错误产生,例如访问越界的数组。<br><strong>Recover</strong><br>是一个内建的函数,让进入令人恐慌的流程中的goroutine恢复过来。recover仅在延迟函数中有效。在正常的执行过程中,调用recover会返回nil并且没有其他任何效果。如果当前的goroutine陷入恐慌,调用recover可以捕获到panic的输入值,并且恢复正常的执行.</p>
+<p><strong>Panic</strong><br>是一个内建函数, 可以中断原有的控制流程, 进入一个令人恐慌的流程中<br>当函数F调用panic, F的执行被中断, 接着执行F中的延迟函数, 然后F返回到调用它的地方<br>在调用的地方,F的行为就像调用了panic. 这一过程继续向上, 直到程序崩溃时的所有goroutine返回<br>恐慌可以直接调用panic产生, 也可以由运行时错误产生, 例如访问越界的数组<br><strong>Recover</strong><br>是一个内建的函数, 让进入令人恐慌的流程中的goroutine恢复过来<br>recover仅在延迟函数中有效, 在正常的执行过程中, 调用recover会返回nil并且没有其他任何效果<br>如果当前的goroutine陷入恐慌, 调用recover可以捕获到panic的输入值, 并且恢复正常的执行</p>
 <h2 id="chapter_3_包">chapter 3 包</h2>
-<p>文件名不需要与包名一致;Go包可以由多个文件组成,但是使用相同的package &lt; name&gt;. 通过在导入语句指定其他名称来覆盖默认名称<br>包名是小写的一个单词;不应当有下划线或混合大小写.</p>
+<p>文件名不需要与包名一致; Go包可以由多个文件组成, 但是使用相同的package &lt; name&gt;<br>通过在导入语句指定其他名称来覆盖默认名称<br>包名是小写的一个单词; 不应当有下划线或混合大小写</p>
 <h3 id="public/private">public/private</h3>
-<p>名称以大写字母起始的函数是可导出的,可以在包的外部调用</p>
+<p>名称以大写字母起始的函数是可导出的, 可以在包的外部调用</p>
 <h3 id="test">test</h3>
 <p>一边写代码一边写测试</p>
 <h2 id="chapter_4_进阶">chapter 4 进阶</h2>
-<p>go有指针, 但是没有对指针的运算, 降低复杂度.<br>那你内存的管理,网络包的解析,需用偏移地址怎么办呢?</p>
+<p>go有指针, 但是没有对指针的运算, 降低复杂度<br>那内存的管理, 网络包的解析, 需用偏移地址怎么办呢?</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a href="http://weiguozhu.com/2014/11/06/go/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://weiguozhu.com/2014/11/19/go/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -202,18 +202,9 @@ rune复数错误类型">
     
 <nav id="article-nav">
   
-    <a href="/2014/11/06/elasticsearch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          ElasticSearch
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/06/flume_surce/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Flume source关注四种类型的数据源</div>
+    <a href="/2014/11/06/elasticsearch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ElasticSearch</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
