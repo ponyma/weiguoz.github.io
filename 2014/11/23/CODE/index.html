@@ -131,7 +131,7 @@
   
     <div class="article-meta">
       <a href="/2014/11/23/CODE/" class="article-date">
-  	<time datetime="2014-11-23T15:35:53.000Z" itemprop="datePublished">Nov 23 2014</time>
+  	<time datetime="2014-11-23T15:42:51.000Z" itemprop="datePublished">Nov 23 2014</time>
 </a>
       
       
@@ -163,12 +163,13 @@
 <p>秒杀无重复的情形后, 一直没有考虑重复的情况. 后来有机会重新思考, 发现思考量还不小. 姿态有些像<a href="http://codility.com" target="_blank" rel="external">codility</a>的题,<br>依然使用无重复的方法, 考虑relationship[i]遇到的两类重复:</p>
 <ol>
 <li>heads[i]重复<br>那么有<br>X…S =&gt; SX… (k)<br>…<br>S?..Y =&gt; YS?.. (i)<br>假如?不是X, 而是某个i之后的j, 即:<br>关系Z…S. 那么考虑YSX..和YSZ..显然前者会更早出现, 因为X&lt;=Z. ?要出现只能是X</li>
-<li>tails[i]重复<br>同样可证<br>如果一定要评分: <code>algorithm是4.2, coding 4.5</code>, 之所以coding比algorithm还高, 因思路没有花费多久时间, 但coding我尝试了, 尚无满意的实现</li>
+<li>tails[i]重复<br>同样可证</li>
 </ol>
+<p>依照对<a href="http://codility.com" target="_blank" rel="external">codility</a>的评价规则, 这儿<code>algorithm是4.2, coding 4.5</code>, 之所以coding比algorithm还高, 因为coding我尝试了, 尚无满意的实现. 但算法克简洁归纳为一句话: <strong>若已经出现了head/tail, 就是用越早出现</strong></p>
 <h2 id="follow_up">follow up</h2>
 <ul>
-<li>1 能给出一个非法的尾字符序列, 即不存在满足的原串?</li>
-<li>2 如何测试程序?<br>若采用正向的测试, 即如文章开头描述的方法, 给出s, 然后求出尾字符序列, 再根据尾字符序列求出s’, 那么你会怎么判断s’就是s的k(&gt;=0)次循环左移得到</li>
+<li>1 能否给出一个非法的尾字符序列? 即不存在满足的原串</li>
+<li>2 如何测试程序?<br>若采用正向的测试, 即如文章开头描述的方法, 给出s, 然后求出尾字符序列, 再根据尾字符序列求出s’, 那么你会怎么判断s’就是s的k(&gt;=0)次循环左移得到的</li>
 </ul>
 
       
