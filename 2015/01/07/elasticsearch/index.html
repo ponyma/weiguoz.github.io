@@ -146,7 +146,7 @@
   
     <div class="article-meta">
       <a href="/2015/01/07/elasticsearch/" class="article-date">
-  	<time datetime="2015-01-07T11:37:03.000Z" itemprop="datePublished">Jan 7 2015</time>
+  	<time datetime="2015-01-07T11:57:53.000Z" itemprop="datePublished">Jan 7 2015</time>
 </a>
       
       
@@ -207,6 +207,8 @@
 <p>定义搜索引擎如何处理一个缩影文档的过程. 包括文档的搜索特征, 如类型, 如何切词. 关于如何切词, 可在配置文件统一配, 也可在建索引时指定.<br><a href="http://donlianli.iteye.com/blog/1923017" target="_blank" rel="external">不创建analyzer, 搜索时使用*gxy*进行wildcard搜索, 把这个检索跟oracle的like进行比较. 发现oracle用20ms就能算出结果, 而es却用了将近100ms</a></p>
 <h3 id="ssd和normal磁盘">ssd和normal磁盘</h3>
 <p>ssd用来存放优质索引<br><a href="http://blog.sematext.com/2012/05/29/elasticsearch-shard-placement-control/" target="_blank" rel="external">http://blog.sematext.com/2012/05/29/elasticsearch-shard-placement-control/</a><br>可以在同一机器上分别创建ssd和normal磁盘两个实例</p>
+<h3 id="prospective_search">prospective search</h3>
+<p>将查询语句存储到索引, 如果有新文档添加到索引中, 就把文档关联到匹配的查询语句. 适合新闻, 博客等不定时更新的订阅服务</p>
 <h3 id="filter">filter</h3>
 <p><a href="http://log.medcl.net/item/2013/09/elasticsearch-inside-the-various-filter/" target="_blank" rel="external">一篇如何高效使用过滤器的文章</a></p>
 <h2 id="参考站点">参考站点</h2>
